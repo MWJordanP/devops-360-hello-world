@@ -29,3 +29,8 @@
         owner: www-data
         group: www-data
         mode: 0755
+
+- name: NGINX | Starting NGINX
+  service:
+    name: nginx
+    state: restarted
