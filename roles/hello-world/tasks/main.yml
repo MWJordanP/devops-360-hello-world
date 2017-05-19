@@ -2,5 +2,6 @@
 # tasks file for hello-world
 
 -   name: Debug Hello-world
-    debug:
-        msg: "Hello {{ hello_world_msg }}"
+    apt:
+        name: nginx
+        state: present
