@@ -13,3 +13,19 @@
         owner: root
         group: root
         mode: 0644
+
+-   name: Create site root folder
+    file:
+        state: directory
+        path: {{ hello_world_folder }}
+        owner: www-data
+        group: www-data
+        mode: 0755
+
+-   name: Deploy index
+    template:
+        src: index.html.j2
+        dest: {{ hello_world_folder }}
+        owner: www-data
+        group: www-data
+        mode: 0755
