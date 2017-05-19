@@ -1,7 +1,15 @@
 ---
 # tasks file for hello-world
 
--   name: Debug Hello-world
+-   name: Install Nginx
     apt:
         name: nginx
         state: present
+
+- name: Rewrite config nginx
+    template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/sites-availables/default
+        owner: root
+        group: root
+        mode: 0644

@@ -1,0 +1,10 @@
+server {
+	listen {{ hello_word_port }} default_server;
+	listen [::]:{{ hello_word_port }} default_server ipv6only=on;
+	root {{ hello_word_folder }};
+	index index.html index.htm;
+	server_name localhost;
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
